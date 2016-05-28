@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+
+h1 {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+hr {
+	border-color: red;
+}

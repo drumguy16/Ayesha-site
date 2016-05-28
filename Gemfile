@@ -12,6 +12,12 @@ gem 'uglifier', '>= 1.3.0'
 # for uploading images
 gem "paperclip", "~> 5.0.0.beta1"
 
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha3'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
