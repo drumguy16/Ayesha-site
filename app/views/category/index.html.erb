@@ -1,0 +1,8 @@
+<% categories = Category.all %>
+<section class="container">
+  <% categories.each do |category| %>
+    <div class="col-sm-3">
+      <%= link_to image_tag("#{category.image_path}",  alt: category.name, class: "img-fluid"), "category#show" %>
+    </div>
+  <% end %>
+</section>

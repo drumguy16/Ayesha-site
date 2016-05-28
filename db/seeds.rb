@@ -1,7 +1,7 @@
-Category.create(name: 'architecture', image_path: 'assets/architecture.jpg')
-Category.create(name: 'sculpture', image_path: 'assets/sculpture.jpg')
-Category.create(name: 'art', image_path: 'assets/art.jpeg')
-Category.create(name: 'about', image_path: 'assets/about.jpg')
+Category.create(name: 'architecture', image_path: 'architecture.jpg')
+Category.create(name: 'sculpture', image_path: 'sculpture.jpg')
+Category.create(name: 'art', image_path: 'art.jpeg')
+Category.create(name: 'about', image_path: 'about.jpg')
 
 categories = Category.all
 
