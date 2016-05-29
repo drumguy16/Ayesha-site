@@ -1,0 +1,7 @@
+<section class="container">
+  <% @category.projects.each do |project| %>
+    <div class="col-sm-3">
+      <%= link_to image_tag(project.main_image_path,  alt: project.title, class: "img-fluid"), project %>
+    </div>
+  <% end %>
+</section>

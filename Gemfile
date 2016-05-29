@@ -18,6 +18,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
+gem 'faker'
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
