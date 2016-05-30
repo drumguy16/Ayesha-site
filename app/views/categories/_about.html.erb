@@ -1,0 +1,14 @@
+<section class="container">
+  <section class="row">
+    <div class="col-sm-5 offset-2">
+      <h1><%= category.name.upcase %></h1>
+      <p class="lead"><%= category.description %></p>
+    </div>
+    <div class="col-sm-5">
+      <%= image_tag(category.image_path, alt: category.name, class: "img-fluid") %>
+    </div>
+  </section>
+  <div class="col-sm-4">
+    <%= render partial: "categories/contact" %>
+  </div>
+</section>
