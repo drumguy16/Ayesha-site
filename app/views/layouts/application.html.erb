@@ -14,10 +14,20 @@
     <% end %>
     <p class="lead">My site is better than Samuel S. Powers'</p>
   </section>
+  <ul class="nav">
+    <%if current_user %>
+      <li><h5>Hey Sexy</h5></li>
+      <li class='nbtn'><a href="/users/show">My Profile</a></li>
+      <li class='nbtn'><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
+
+    <%else%>
+      <li class='nbtn'><a href="/users/sign_in">Login</a></li>
+    <% end %>
+  </ul>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

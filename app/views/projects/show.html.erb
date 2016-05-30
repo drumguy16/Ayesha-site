@@ -3,3 +3,8 @@
 <section class="col-sm-4">
   <p><%= @project.description %></p>
 </section>
+<% @project.images.each do |image| %>
+  <div class="col-sm-6">
+    <%= link_to image_tag(image.image_path, alt: image.title, class: "img-fluid"), image %>
+  </div>
+<% end %>
