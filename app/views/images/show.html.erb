@@ -1,3 +1,4 @@
+<%= render partial: "layouts/nav", locals: {category: Category.find(@project.category_id)}  %>
 <section class="container">
   <div class="col-sm-12">
     <%= image_tag(@image.image_path, alt: @image.title, class: "img-fluid") %>

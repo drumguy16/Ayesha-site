@@ -1,3 +1,4 @@
+<%= render partial: "layouts/nav", locals: {category: @category}  %>
 <section class="container">
   <% if @category.name == 'about' %>
     <%= render partial: "categories/about", locals: {category: @category} %>
