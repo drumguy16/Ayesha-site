@@ -1,4 +1,13 @@
 <%= render partial: "layouts/nav", locals: {category: Category.find(@project.category_id)}  %>
+<div class="container">
+  <% if current_user %>
+    <%= link_to "Edit Project", edit_category_project_path, class: "btn btn-primary" %>
+    <%= link_to "Delete Project", category_project_path,
+      method: :delete,
+      data: { confirm: 'Kill the fuck out of this project, Ayesha?' },
+      class: "btn btn-primary" %>
+  <% end %>
+</div>
 <%= image_tag @project.main_image_path.url(:medium) %>
 <h1><%= @project.title %></h1>
 <p class="lead"><%= @project.sales_pitch %></p>
