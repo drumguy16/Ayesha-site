@@ -1,4 +1,9 @@
 <%= render partial: "layouts/nav", locals: {category: @category}  %>
+<% if current_user %>
+  <ul>
+    <li class='nbtn'><%= link_to "Add Project", "/categories/#{@category.id}/projects/new" %>
+  </li>
+<% end %>
 <section class="container">
   <% if @category.name == 'about' %>
     <%= render partial: "categories/about", locals: {category: @category} %>
@@ -9,7 +14,7 @@
     </div>
     <% @category.projects.each do |project| %>
       <div class="col-sm-3">
-        <%= link_to image_tag(project.main_image_path,  alt: project.title, class: "img-fluid"), project %>
+        <%= link_to image_tag(project.main_image_path,  alt: project.title, class: "img-fluid"), "/categories/#{@category.id}/projects/#{project.id}" %>
       </div>
     <% end %>
   <% end %>

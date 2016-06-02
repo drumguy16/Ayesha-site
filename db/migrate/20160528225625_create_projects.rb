@@ -4,7 +4,6 @@ class CreateProjects < ActiveRecord::Migration
       t.string :title
       t.string :sales_pitch
       t.string :description
-      t.string :main_image_path
       t.belongs_to :category, index: true
 
       t.timestamps null: false
