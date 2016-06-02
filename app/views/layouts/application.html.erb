@@ -18,7 +18,6 @@
         <li><h5>Hey Sexy</h5></li>
         <li class='nbtn'><a href="/users/show">My Profile</a></li>
         <li class='nbtn'><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
-
       <%else%>
         <li class='nbtn'><a href="/users/sign_in">Login</a></li>
       <% end %>

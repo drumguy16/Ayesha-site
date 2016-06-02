@@ -1,4 +1,5 @@
 <%= render partial: "layouts/nav", locals: {category: Category.find(@project.category_id)}  %>
+<%= image_tag @project.main_image_path.url(:medium) %>
 <h1><%= @project.title %></h1>
 <p class="lead"><%= @project.sales_pitch %></p>
 <section class="col-sm-4">
