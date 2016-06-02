@@ -10,8 +10,11 @@ class ProjectsController < ApplicationController
 		@project = Project.new( project_params )
 		@project.category_id = params[:category_id]
 
-		@project.save
-		redirect_to "/categories/#{@project.category_id}/projects/#{@project.id}"
+		if @project.save
+			redirect_to "/categories/#{@project.category_id}/projects/#{@project.id}"
+		else
+			render 'new'
+		end
 	end
 
 	def show

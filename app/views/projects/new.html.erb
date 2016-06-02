@@ -1,4 +1,17 @@
 <%= form_for @project, url: category_projects_path, html: { multipart: true } do |form| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@project.errors.count, "error") %> prohibited
+        this project from being saved:
+      </h2>
+      <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
