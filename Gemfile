@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # for uploading images
 gem "paperclip", "~> 5.0.0.beta1"
 
+
 # Bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha3'
 source 'https://rails-assets.org' do
