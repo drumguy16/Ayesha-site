@@ -1,5 +1,12 @@
 <%= render partial: "layouts/nav", locals: {category: Category.find(@project.category_id)}  %>
 <section class="container">
+  <% if current_user %>
+    <%= link_to "Edit Image", edit_category_project_pic_path, class: "btn btn-primary" %>
+    <%= link_to "Delete Image", category_project_pic_path,
+      method: :delete,
+      data: { confirm: 'Get rid of this image because it sucks, Ayesha?' },
+      class: "btn btn-primary" %>
+  <% end %>
   <div class="col-sm-12">
     <%= image_tag(@pic.pic_path.url(:large), alt: @pic.title, class: "img-fluid") %>
     <h1><%= @pic.title %></h1>

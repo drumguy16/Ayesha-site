@@ -3,6 +3,10 @@ class PicsController < ApplicationController
 		@pic = Pic.new()
 	end
 
+	def edit
+		@pic = Pic.find(params[:id])
+	end
+
 	def create
 		@pic = Pic.new( pic_params )
 		@pic.project_id = params[:project_id]
@@ -13,9 +17,26 @@ class PicsController < ApplicationController
 		end
 	end
 
+	def update
+		@pic = Pic.find(params[:id])
+		if @pic.update( pic_params )
+			redirect_to category_project_pic_path
+		else
+			render 'edit'
+		end
+	end
+
 	def show
 		@pic = Pic.find(params[:id])
 		@project = Project.find(@pic.project_id)
+	end
+
+	def destroy
+		@pic = Pic.find(params[:id])
+		project = Project.find(params[:project_id])
+		@pic.destroy
+
+		redirect_to category_project_path(params[:category_id], params[:project_id])
 	end
 
 	private
