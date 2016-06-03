@@ -24,15 +24,16 @@ ActiveRecord::Schema.define(version: 20160601032855) do
     t.datetime "updated_at",                                 null: false
   end
 
-  create_table "images", force: :cascade do |t|
+  create_table "pics", force: :cascade do |t|
     t.string   "title"
+    t.string   "description"
     t.integer  "project_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image_path_file_name"
-    t.string   "image_path_content_type"
-    t.integer  "image_path_file_size"
-    t.datetime "image_path_updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "pic_path_file_name"
+    t.string   "pic_path_content_type"
+    t.integer  "pic_path_file_size"
+    t.datetime "pic_path_updated_at"
   end
 
   create_table "projects", force: :cascade do |t|

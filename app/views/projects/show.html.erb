@@ -6,6 +6,7 @@
       method: :delete,
       data: { confirm: 'Kill the fuck out of this project, Ayesha?' },
       class: "btn btn-primary" %>
+    <%= link_to "Add Image", "/categories/#{@project.category_id}/projects/#{@project.id}/pics/new", class: "btn btn-primary" %>
   <% end %>
 </div>
 <%= image_tag @project.main_image_path.url(:medium) %>
@@ -14,8 +15,8 @@
 <section class="col-sm-4">
   <p><%= @project.description %></p>
 </section>
-<% @project.images.each do |image| %>
+<% @project.pics.each do |pic| %>
   <div class="col-sm-6">
-    <%= link_to image_tag(image.image_path, alt: image.title, class: "img-fluid"), image %>
+    <%= link_to image_tag(pic.pic_path.url(:medium), alt: pic.title, class: "img-fluid" ), "/categories/#{@project.category_id}/projects/#{@project.id}/pics/#{pic.id}" %>
   </div>
 <% end %>

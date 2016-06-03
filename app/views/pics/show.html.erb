@@ -1,0 +1,8 @@
+<%= render partial: "layouts/nav", locals: {category: Category.find(@project.category_id)}  %>
+<section class="container">
+  <div class="col-sm-12">
+    <%= image_tag(@pic.pic_path.url(:large), alt: @pic.title, class: "img-fluid") %>
+    <h1><%= @pic.title %></h1>
+    <p class="lead"><%= @pic.description %></p>
+  </div>
+</section>
