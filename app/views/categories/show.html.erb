@@ -1,20 +1,23 @@
 <%= render partial: "layouts/nav", locals: {category: @category}  %>
 <% if current_user %>
-  <ul>
-    <li class='nbtn'><%= link_to "Add Project", "/categories/#{@category.id}/projects/new" %>
-  </li>
+  <div class="container">
+    <%= link_to "Add #{@category.name.capitalize} Project", new_category_project_path(@category), class: "btn btn-primary" %>
+  </div>
 <% end %>
 <section class="container">
   <% if @category.name == 'about' %>
     <%= render partial: "categories/about", locals: {category: @category} %>
   <% else %>
-    <div class="col-sm-4 offset-sm-4">
+    <div class="col-sm-6 col-sm-offset-3 m-b-3 category-description">
       <h1><%= @category.name.upcase %></h1>
+      <hr>
       <p class="lead"><%= @category.description %></p>
     </div>
+</section>
+<section class="container">
     <% @category.projects.each do |project| %>
-      <div class="col-sm-3">
-        <%= link_to image_tag(project.main_image_path,  alt: project.title, class: "img-fluid"), "/categories/#{@category.id}/projects/#{project.id}" %>
+      <div class="col-sm-3 m-b-2">
+        <%= link_to image_tag(project.main_image_path.url(:medium),  alt: project.title, class: "img-fluid img-thumbnail"), category_project_path(@category.id, project) %>
       </div>
     <% end %>
   <% end %>
