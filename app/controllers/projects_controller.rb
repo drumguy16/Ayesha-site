@@ -31,7 +31,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@project = Project.find(params[:id])
+		if params[:id]
+			@project = Project.find(params[:id])
+		else
+			@project = Project.find(params[:project_id])
+		end
 	end
 
 	def destroy
