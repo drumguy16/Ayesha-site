@@ -6,6 +6,7 @@
       method: :delete,
       data: { confirm: 'Get rid of this image because it sucks, Ayesha?' },
       class: "btn btn-primary" %>
+    <%= link_to "Back to Project", category_project_path(params[:category_id], params[:project_id]), class: "btn btn-primary" %>
   <% end %>
   <div class="col-sm-12">
     <%= image_tag(@pic.pic_path.url(:large), alt: @pic.title, class: "img-fluid") %>
