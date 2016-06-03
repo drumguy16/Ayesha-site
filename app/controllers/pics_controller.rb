@@ -11,7 +11,7 @@ class PicsController < ApplicationController
 		@pic = Pic.new( pic_params )
 		@pic.project_id = params[:project_id]
 		if @pic.save
-			redirect_to root_path
+			redirect_to category_project_pic_path(params[:category_id], params[:project_id], @pic)
 		else
 			render 'new'
 		end
