@@ -2,13 +2,18 @@
 <% if current_user %>
   <div class="container">
     <%= link_to "Add #{@category.name.capitalize} Project", new_category_project_path(@category), class: "btn btn-primary" %>
+    <%= link_to "Edit #{@category.name.capitalize}", edit_category_path, class: "btn btn-primary" %>
+    <%= link_to "Delete #{@category.name.capitalize}", category_path,
+      method: :delete,
+      data: { confirm: 'Kill the fuck out of this project category, Ayesha?' },
+      class: "btn btn-primary" %>
   </div>
 <% end %>
 <section class="container">
   <% if @category.name == 'about' %>
     <%= render partial: "categories/about", locals: {category: @category} %>
   <% else %>
-    <div class="col-sm-6 col-sm-offset-3 m-b-3 category-description">
+    <div class="col-sm-6 col-sm-offset-3 m-b-3 m-t-3 category-description">
       <h1><%= @category.name.upcase %></h1>
       <hr>
       <p class="lead"><%= @category.description %></p>

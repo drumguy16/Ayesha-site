@@ -1,8 +1,13 @@
 <% categories = Category.all %>
-<section class="container">
+<% if current_user %>
+  <div class="container">
+    <%= link_to "Add Project Category", new_category_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+<section class="container m-t-3">
   <% categories.each do |category| %>
     <div class="col-sm-3">
-      <%= link_to image_tag(category.image_path,  alt: category.name, class: "img-fluid"), category %>
+      <%= link_to image_tag(category.image_path.url(:medium),  alt: category.name, class: "img-fluid"), category %>
     </div>
   <% end %>
 </section>
