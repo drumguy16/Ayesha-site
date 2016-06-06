@@ -8,7 +8,7 @@
   <% categories.each do |category| %>
     <div class="col-sm-3 bw pic">
         <%= link_to image_tag(category.image_path.url(:medium),  alt: category.name, class: "img-fluid top"), category %>
-        <h3 class="category-title"><%= category.name %></h3>
+        <h3 class="category-title"><%= category.name.capitalize %></h3>
     </div>
   <% end %>
 </section>

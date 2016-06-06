@@ -8,9 +8,9 @@
       class: "btn btn-primary" %>
     <%= link_to "Back to Project", category_project_path(params[:category_id], params[:project_id]), class: "btn btn-primary" %>
   <% end %>
-  <div class="col-sm-12">
+  <div class="col-sm-8 m-t-3">
     <%= image_tag(@pic.pic_path.url(:large), alt: @pic.title, class: "img-fluid") %>
-    <h1><%= @pic.title %></h1>
+    <h1 class="m-t-3"><%= @pic.title %></h1>
     <p class="lead"><%= @pic.description %></p>
   </div>
 </section>
