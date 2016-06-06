@@ -3,6 +3,14 @@ nav {
 	margin-bottom: 5rem;
 }
 
+.navbar {
+  background-color: rgb(237, 238, 239);
+}
+
+.navbar a {
+  color: black;
+}
+
 /* Underline From Center */
 .nav-link, .navbar-brand {
   display: inline-block;

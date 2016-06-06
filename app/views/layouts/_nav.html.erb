@@ -1,5 +1,5 @@
 <% if category.name != "about" %>
-  <nav class="navbar bg-inverse">
+  <nav class="navbar">
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#responsiveCollapse">
       ☰
     </button>
@@ -8,6 +8,16 @@
       <ul class="nav navbar-nav">
         <li class="nav-item">
           <%= link_to "#{category.name.capitalize} Projects", "/categories/#{category.id}", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <% if params[:project_id] %>
+            <% category = Category.find(params[:category_id]) %>
+            <% project = Project.find(params[:project_id]) %>
+            <%= link_to "#{project.title.capitalize}", category_project_path(category, project), class: "nav-link" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "", "/categories/#{category.id}", class: "nav-link" %>
         </li>
       </ul>
     </div>
