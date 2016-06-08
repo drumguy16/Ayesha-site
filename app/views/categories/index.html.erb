@@ -6,7 +6,7 @@
 <% end %>
 <section class="container m-t-3">
   <% categories.each do |category| %>
-    <div class="col-md-3 col-xs-12 bw pic">
+    <div class="col-sm-3 bw pic">
         <%= link_to image_tag(category.image_path.url(:medium),  alt: category.name, class: "img-fluid"), category %>
         <h3 class="category-title"><%= category.name.capitalize %></h3>
     </div>
