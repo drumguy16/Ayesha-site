@@ -1,0 +1,11 @@
+.description {
+	border-left: 7px solid rgb(164, 31, 35);
+	border-top: 7px solid rgb(164, 31, 35);
+	padding-left: 1em;
+}
+
+.footer {
+	margin-top: 20rem;
+	border-top: 2px solid rgb(164, 31, 35);
+	padding-top: 1rem;
+}

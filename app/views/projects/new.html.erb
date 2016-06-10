@@ -1,34 +1,35 @@
-<%= form_for @project, url: category_projects_path, html: { multipart: true } do |form| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@project.errors.count, "error") %> prohibited
-        this project from being saved:
-      </h2>
-      <ul>
-        <% @project.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+<section class="container text-sm-center">
+  <%= form_for @project, url: category_projects_path, html: { multipart: true } do |form| %>
+    <% if @project.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@project.errors.count, "error") %> prohibited
+          this project from being saved:
+        </h2>
+        <ul>
+          <% @project.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
+    <p>
+      <%= form.label :tag_line %><br>
+      <%= form.text_field :sales_pitch %>
+    </p>
+    <p>
+      <%= form.label :project_description%><br>
+      <%= form.text_area :description %>
+    </p>
+    <p>
+      <%= form.file_field :main_image_path %>
+    </p>
+    <p>
+      <%= form.submit "Create Project",class: "btn btn-primary" %>
+    </p>
   <% end %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :tag_line %><br>
-    <%= form.text_field :sales_pitch %>
-  </p>
-  <p>
-    <%= form.label :project_description%><br>
-    <%= form.text_area :description %>
-  </p>
-  <p>
-    <%= form.file_field :main_image_path %>
-  </p>
-  <p>
-    <%= form.submit "Create Project",class: "btn btn-primary" %>
-  </p>
-<% end %>
-
+</section>
