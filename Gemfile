@@ -27,6 +27,9 @@ end
 
 gem 'faker'
 
+# AWS file storage for images
+gem 'aws-sdk'
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
