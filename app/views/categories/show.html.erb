@@ -21,7 +21,7 @@
 <section class="container">
     <% @category.projects.each do |project| %>
       <div class="col-sm-3 m-b-2 blur bw pic">
-        <%= link_to image_tag(project.main_image_path.url(:medium),  alt: project.title, class: "img-fluid img-thumbnail"), category_project_path(@category.id, project) %>
+        <%= link_to image_tag(project.main_image_path.url(:medium),  alt: project.title, class: "img-fluid"), category_project_path(@category.id, project) %>
         <h3 class="category-title"><%= project.title %></h3>
       </div>
     <% end %>
