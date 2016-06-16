@@ -12,7 +12,7 @@
 <section class="container m-t-3">
   <div class="row">
     <%= image_tag @project.main_image_path.url(:medium), class: "col-sm-6 img-fluid" %>
-    <div class="project-description col-sm-4">
+    <div class="project-description col-sm-6">
       <h1><%= @project.title.upcase %></h1>
       <h3><%= @project.sales_pitch %></h3>
       <p class="lead description"><%= @project.description %></p>
