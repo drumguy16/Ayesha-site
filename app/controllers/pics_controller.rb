@@ -9,6 +9,9 @@ class PicsController < ApplicationController
 
 	def create
 		@pic = Pic.new( pic_params )
+		if params[:showable] == "1"
+			@pic.showable = true
+		end
 		@pic.project_id = params[:project_id]
 		if @pic.save
 			redirect_to category_project_pic_path(params[:category_id], params[:project_id], @pic)
@@ -42,7 +45,7 @@ class PicsController < ApplicationController
 	private
 	
 	def pic_params
-  		params.require(:pic).permit(:title, :description, :pic_path, :project_id)
+  		params.require(:pic).permit(:title, :description, :pic_path, :project_id, :showable)
 	end
 
 end

@@ -1,8 +1,24 @@
 .logo {
+	transition: color 0.5s ease;
 	color: black;
 }
 
 .logo:hover {
 	text-decoration: none;
+	color:rgb(164, 31, 35);
 }
 
+#tagline {
+	margin-left: 1rem;
+}
+
+.jumbotron:before {
+  content: '';
+  width: 0;
+  height: 100%;
+  position: absolute;
+  border: 7px solid rgb(164, 31, 35);
+  top: 11.55rem;
+  left: 1.1rem;
+  z-index: 5;
+}

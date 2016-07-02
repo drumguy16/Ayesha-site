@@ -22,8 +22,13 @@
 <section class="container m-t-3">
   <% @project.pics.each do |pic| %>
     <div class="col-sm-6 m-t-2 bw pic">
-      <%= link_to image_tag(pic.pic_path.url(:large), alt: pic.title, class: "img-fluid" ), "/categories/#{@project.category_id}/projects/#{@project.id}/pics/#{pic.id}" %>
-      <h3 class="category-title"><%= pic.title %></h3>
+      <% if pic.showable || current_user %>
+        <%= link_to image_tag(pic.pic_path.url(:large), alt: pic.title, class: "img-fluid" ), "/categories/#{@project.category_id}/projects/#{@project.id}/pics/#{pic.id}" %>
+        <h3 class="category-title"><%= pic.title %></h3>
+      <% else %>
+        <%= image_tag(pic.pic_path.url(:large), alt: pic.title, class: "img-fluid" ) %>
+        <h3 class="category-title"><%= pic.title %></h3>
+      <% end %>
     </div>
   <% end %>
 </section>

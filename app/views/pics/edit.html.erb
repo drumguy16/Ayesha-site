@@ -22,6 +22,10 @@
       <%= form.label :description %><br>
       <%= form.text_area :description %>
     </p>
+    <p>
+      <%= check_box_tag(:showable) %>
+      <%= label_tag(:showable, "Give this image a show page?") %>
+    </p>
     <%= form.file_field :pic_path %>
     <%= form.submit "Upload Image", class: "btn btn-primary" %>
   <% end %>
